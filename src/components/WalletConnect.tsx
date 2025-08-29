@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
+import SendTransaction from './SendTransaction';
 
 interface WalletState {
   isConnected: boolean;
@@ -11,6 +12,7 @@ interface WalletState {
     name: string | null;
     isTestnet: boolean;
   };
+  showSendForm: boolean;
 }
 
 const WalletConnect: React.FC = () => {
@@ -24,6 +26,7 @@ const WalletConnect: React.FC = () => {
       name: null,
       isTestnet: false,
     },
+    showSendForm: false,
   });
   const [web3, setWeb3] = useState<Web3 | null>(null);
 
@@ -112,6 +115,7 @@ const WalletConnect: React.FC = () => {
             name: network.name,
             isTestnet: network.isTestnet,
           },
+          showSendForm: false,
         });
       } else {
         setWalletState(prev => ({
@@ -140,6 +144,7 @@ const WalletConnect: React.FC = () => {
         name: null,
         isTestnet: false,
       },
+      showSendForm: false,
     });
     setWeb3(null);
   };
@@ -253,6 +258,13 @@ const WalletConnect: React.FC = () => {
     return networkInfo.symbol;
   };
 
+  const toggleSendForm = () => {
+    setWalletState(prev => ({
+      ...prev,
+      showSendForm: !prev.showSendForm,
+    }));
+  };
+
   return (
     <div className="wallet-connect">
       <h2>Ethereum Wallet</h2>
@@ -313,12 +325,29 @@ const WalletConnect: React.FC = () => {
               Refresh Balance
             </button>
             <button 
+              onClick={toggleSendForm}
+              className="send-button"
+            >
+              {walletState.showSendForm ? 'Hide Send Form' : 'Send ETH'}
+            </button>
+            <button 
               onClick={disconnectWallet}
               className="disconnect-button"
             >
               Disconnect
             </button>
           </div>
+
+          {walletState.showSendForm && (
+            <div className="send-transaction-container">
+              <SendTransaction
+                web3={web3}
+                account={walletState.account}
+                balance={walletState.balance}
+                networkSymbol={getNetworkSymbol()}
+              />
+            </div>
+          )}
         </div>
       )}
     </div>

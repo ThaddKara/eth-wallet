@@ -6,6 +6,8 @@ A React TypeScript application that connects to a user's Ethereum wallet and dis
 
 - 🔗 Connect to MetaMask wallet
 - 💰 Display real-time ETH balance
+- 💸 Send ETH to other wallet addresses
+- ⛽ Automatic gas estimation and fee calculation
 - 🔄 Auto-refresh balance every 30 seconds
 - 📱 Responsive design
 - 🎨 Modern UI with gradient backgrounds
@@ -42,8 +44,12 @@ npm run dev
 2. **Connect Wallet**: Click the "Connect Wallet" button
 3. **Authorize**: Approve the connection request in MetaMask
 4. **View Balance**: Your ETH balance will be displayed automatically
-5. **Refresh**: Use the "Refresh Balance" button to manually update the balance
-6. **Disconnect**: Click "Disconnect" to disconnect your wallet
+5. **Send ETH**: Click "Send ETH" to open the transaction form
+6. **Enter Details**: Fill in recipient address and amount
+7. **Review**: Check the transaction summary and gas settings
+8. **Send**: Click "Send ETH" to execute the transaction
+9. **Refresh**: Use the "Refresh Balance" button to manually update the balance
+10. **Disconnect**: Click "Disconnect" to disconnect your wallet
 
 ## Features Explained
 
@@ -57,6 +63,14 @@ npm run dev
 - Displays ETH balance in a readable format
 - Auto-updates every 30 seconds
 - Manual refresh option available
+
+### Send Transactions
+- Send ETH to any valid Ethereum address
+- Automatic gas estimation and fee calculation
+- Real-time transaction summary
+- Input validation for addresses and amounts
+- Support for custom gas settings
+- Transaction status feedback
 
 ### Event Handling
 - Listens for account changes (switching accounts in MetaMask)
@@ -97,7 +111,8 @@ npm run dev
 ```
 src/
 ├── components/
-│   └── WalletConnect.tsx    # Main wallet component
+│   ├── WalletConnect.tsx    # Main wallet component
+│   └── SendTransaction.tsx  # Send transaction component
 ├── types/
 │   └── ethereum.d.ts        # TypeScript declarations
 ├── App.tsx                  # Main app component
