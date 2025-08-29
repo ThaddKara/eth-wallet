@@ -1,0 +1,213 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.App-header {
+  margin-bottom: 40px;
+}
+
+.App-header h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wallet-connect {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wallet-connect h2 {
+  color: #333;
+  margin: 0 0 24px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.error-message {
+  background: #fee;
+  color: #c53030;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #feb2b2;
+  font-size: 14px;
+}
+
+.connect-section {
+  text-align: center;
+}
+
+.connect-section p {
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.connect-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.connect-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.wallet-info {
+  text-align: left;
+}
+
+.network-info, .account-info, .balance-info {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.network-info h3, .account-info h3, .balance-info h3 {
+  color: #333;
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.account-address {
+  color: #667eea;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  margin: 0;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.network-name {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.network-name.mainnet {
+  color: #059669;
+}
+
+.network-name.testnet {
+  color: #d97706;
+}
+
+.testnet-badge {
+  background: #fef3c7;
+  color: #d97706;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.switch-network-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.switch-network-button:hover {
+  background: #2563eb;
+}
+
+.balance-amount {
+  color: #059669;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.refresh-button, .disconnect-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refresh-button {
+  background: #3b82f6;
+  color: white;
+}
+
+.refresh-button:hover {
+  background: #2563eb;
+}
+
+.disconnect-button {
+  background: #ef4444;
+  color: white;
+}
+
+.disconnect-button:hover {
+  background: #dc2626;
+}
+
+@media (max-width: 600px) {
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .wallet-connect {
+    padding: 24px;
+    margin: 0 16px;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+}
